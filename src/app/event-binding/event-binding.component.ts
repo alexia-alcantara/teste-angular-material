@@ -14,6 +14,10 @@ export class EventBindingComponent implements OnInit {
   spinnerMode = "determinate"
   value = 0
   btnEnable = true;
+  selectDisabled = false;
+  selectedOption = 1;
+
+  inputName = "Alexia";
 
   ngOnInit(): void {
   }
@@ -36,4 +40,18 @@ export class EventBindingComponent implements OnInit {
       this.spinnerMode = "determinate"
     }, 3000);
   }
+
+  cbChange(event) {
+    console.log(event.checked);
+    this.selectDisabled = event.checked;
+  }
+  selectionChange(event) {
+    console.log(event);
+    this.selectedOption = event.value;
+  }
+
+  // inputEvent(event){
+  //   console.log(event.target.value);
+  //   console.log(this.inputName)
+  // }
 }
